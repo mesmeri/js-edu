@@ -9,6 +9,13 @@ module.exports = function getTimeForEducation(
     knowsProgramming = true,
     config = {family: 4}
     ) {
-      return 0;
+      let maxTime = 800;
+      let baseTime = 500;
+
+      if (!knowsProgramming) {
+        maxTime += baseTime;
+      }
+
+      return Math.ceil(maxTime / config[focus]);
   };
   
